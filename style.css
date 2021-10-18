@@ -77,3 +77,16 @@ h1 {
     background-color: #3B4664;
     color: #eae3db;
 }
+
+.btn-item:hover {
+    background-color: #d0c0af;
+}
+
+.eq:hover {
+    background-color: #922c20;
+}
+
+.del:hover,
+.res:hover {
+    background-color: #262d40;
+}

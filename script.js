@@ -1,29 +1,18 @@
-// select all the buttons
-const buttons = document.querySelectorAll('button');
-// select the <input type="text" class="display" disabled> element
-const display = document.querySelector('.display');
+// Use insert() function to insert the number in textview.  
+function insert(num) {
+    document.form1.textview.value = document.form1.textview.value + num;
+}
 
-// add eventListener to each button
-buttons.forEach(function(button) {
-    button.addEventListener('click', calculate);
-});
-
-// calculate function
-function calculate(event) {
-    // current clicked buttons value
-    const clickedButtonValue = event.target.value;
-
-    if (clickedButtonValue === '=') {
-        // check if the display is not empty then only do the calculation
-        if (display.value !== '') {
-            // calculate and show the answer to display
-            display.value = eval(display.value);
-        }
-    } else if (clickedButtonValue === 'C') {
-        // clear everything on display
-        display.value = '';
-    } else {
-        // otherwise concatenate it to the display
-        display.value += clickedButtonValue;
+// Use equal() function to return the result based on passed values.  
+function equal() {
+    var exp = document.form1.textview.value;
+    if (exp) {
+        document.form1.textview.value = eval(exp)
     }
+}
+
+/* Here, we create a backspace() function to remove the number at the end of the numeric series in textview. */
+function backspace() {
+    var exp = document.form1.textview.value;
+    document.form1.textview.value = exp.substring(0, exp.length - 1); /* remove the element from total length ? 1 */
 }
